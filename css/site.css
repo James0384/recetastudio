@@ -347,9 +347,9 @@ body:not(.is-loading) .loader {
 }
 .device-hero .device-bezel video,
 .device-hero .device-bezel .hero-loop-still {
-  aspect-ratio: 9 / 21;
-  object-fit: cover;
-  object-position: top;
+  aspect-ratio: 540 / 1170;
+  object-fit: fill;
+  object-position: center;
   border-radius: 32px;
 }
 
