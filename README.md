@@ -13,30 +13,15 @@ python3 -m http.server 8765
 
 Open http://127.0.0.1:8765
 
-Live: [https://james0384.github.io/recetastudio/](https://james0384.github.io/recetastudio/)  
-Repo: [James0384/recetastudio](https://github.com/James0384/recetastudio)
+Live: [https://recetastudio.com](https://recetastudio.com)  
+Repo: [James0384/recetastudio](https://github.com/James0384/recetastudio)  
+Cloudflare Pages project: `recetastudio-www` (`recetastudio-www.pages.dev`)
 
-## Publish on GitHub Pages
+The app stays on a separate Pages project (`recipe-studio` → `app.recetastudio.com`). Do not point the apex at that project.
 
-This folder’s **contents** (not the `landing` directory itself) are what GitHub Pages serves from `James0384/recetastudio` on `main`. Copy the **contents** of this folder into the Pages repo root:
+## Publish
 
-```
-index.html
-css/
-js/
-assets/
-.nojekyll
-404.html
-```
-
-Then:
-
-1. Repo **Settings → Pages**
-2. Source: **Deploy from a branch**
-3. Branch: `main` / root
-4. Custom domain: `recetastudio.com` (apex). Keep `app.recetastudio.com` pointed at the existing app.
-
-Add a `CNAME` file containing `recetastudio.com` only when that domain should resolve here.
+This folder’s **contents** (not the `landing` directory itself) live in `James0384/recetastudio` on `main`. A push to `main` deploys Cloudflare Pages. Keep `app.recetastudio.com` on `recipe-studio.pages.dev`.
 
 ## What’s in here
 
