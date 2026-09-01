@@ -339,7 +339,19 @@ body:not(.is-loading) .loader {
   z-index: 0;
   mask-image: radial-gradient(circle at 50% 50%, #000 58%, transparent 72%);
 }
-.device-hero { position: relative; z-index: 1; width: min(72%, 280px); }
+.device-hero { position: relative; z-index: 1; width: min(68%, 260px); }
+.device-hero .device-island { display: none; }
+.device-hero .device-bezel {
+  padding: 8px;
+  border-radius: 40px;
+}
+.device-hero .device-bezel video,
+.device-hero .device-bezel .hero-loop-still {
+  aspect-ratio: 9 / 21;
+  object-fit: cover;
+  object-position: top;
+  border-radius: 32px;
+}
 
 .scroll-cue {
   position: absolute;
@@ -376,7 +388,7 @@ body:not(.is-loading) .loader {
     padding-bottom: 40px;
   }
   .hero-stage { width: 100%; }
-  .device-hero { width: 300px; margin-left: 8%; }
+  .device-hero { width: 280px; margin-left: 8%; }
 }
 
 /* Device */
