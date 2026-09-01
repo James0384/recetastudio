@@ -47,7 +47,7 @@ body {
   font-family: var(--font-body);
   font-size: 18px;
   line-height: 1.5;
-  background: var(--cream);
+  background: var(--banner-bottom);
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
 }
@@ -66,14 +66,15 @@ button { cursor: pointer; background: none; border: 0; color: inherit; }
 .skip {
   position: absolute;
   left: 12px;
-  top: -40px;
+  top: 12px;
+  transform: translateY(-250%);
   background: var(--white);
   color: var(--ink);
   padding: 8px 12px;
   border-radius: 8px;
   z-index: 80;
 }
-.skip:focus { top: 12px; }
+.skip:focus { transform: none; }
 
 .wrap { width: var(--wrap); margin-inline: auto; }
 
@@ -241,16 +242,18 @@ body:not(.is-loading) .loader {
   overflow: hidden;
   display: grid;
   align-items: start;
+  background: var(--banner-bottom);
 }
 .hero-media,
-.hero-media picture,
+.hero-media picture {
+  position: absolute;
+  inset: -2px;
+}
 .hero-media img {
   position: absolute;
   inset: 0;
   width: 100%;
   height: 100%;
-}
-.hero-media img {
   object-fit: cover;
   transform: scale(1.08);
   animation: ken 28s linear alternate infinite;
