@@ -284,21 +284,6 @@
     tick();
   }
 
-  function tilt() {
-    if (reduce || window.matchMedia("(hover: none)").matches) return;
-    const stage = document.querySelector("[data-tilt]");
-    if (!stage) return;
-    stage.addEventListener("mousemove", (e) => {
-      const r = stage.getBoundingClientRect();
-      const x = (e.clientX - r.left) / r.width - 0.5;
-      const y = (e.clientY - r.top) / r.height - 0.5;
-      stage.style.transform = `rotateY(${x * 10}deg) rotateX(${-y * 8}deg)`;
-    });
-    stage.addEventListener("mouseleave", () => {
-      stage.style.transform = "";
-    });
-  }
-
   function grocery() {
     const list = document.getElementById("glist");
     if (!list) return;
@@ -355,7 +340,6 @@
     if (el) el.scrollIntoView();
   }
   steam();
-  tilt();
   grocery();
   heroLoop();
   window.addEventListener("load", hideLoader);

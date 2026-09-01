@@ -327,7 +327,6 @@ body:not(.is-loading) .loader {
   position: relative;
   justify-self: center;
   width: min(100%, 420px);
-  transform-style: preserve-3d;
 }
 .hero-plate {
   position: absolute;
@@ -400,6 +399,7 @@ body:not(.is-loading) .loader {
   object-fit: cover;
   object-position: top;
   background: #1a1020;
+  pointer-events: none;
 }
 .device-bezel .hero-loop-still { display: none; }
 
