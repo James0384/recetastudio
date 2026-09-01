@@ -239,8 +239,13 @@
     if (!nav) return;
 
     const apply = () => {
+      const y = window.scrollY || document.documentElement.scrollTop || 0;
+      if (y < 48) {
+        nav.classList.remove("is-solid");
+        return;
+      }
       if (!hero) {
-        nav.classList.toggle("is-solid", window.scrollY > 8);
+        nav.classList.add("is-solid");
         return;
       }
       const navBottom = nav.getBoundingClientRect().bottom;
