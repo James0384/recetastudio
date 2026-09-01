@@ -191,15 +191,9 @@ body:not(.is-loading) .loader {
   box-shadow: 0 -160px 0 160px #1a0b30;
   transition: background 0.35s var(--ease), box-shadow 0.35s;
 }
-.nav.is-solid {
-  background: #FAF7F2;
-  box-shadow: 0 -160px 0 160px #FAF7F2, 0 1px 0 var(--bdr);
-}
 .nav-brand { display: flex; align-items: center; height: 38px; }
 .nav-logo { height: 32px; width: auto; }
 .nav-logo-ink { display: none; }
-.nav.is-solid .nav-logo-light { display: none; }
-.nav.is-solid .nav-logo-ink { display: block; }
 .nav-end { display: flex; align-items: center; gap: 12px; }
 .lang {
   display: flex;
@@ -208,10 +202,6 @@ body:not(.is-loading) .loader {
   background: rgba(255, 253, 249, 0.16);
   border: 1px solid rgba(255, 253, 249, 0.22);
   cursor: pointer;
-}
-.nav.is-solid .lang {
-  background: var(--parch);
-  border-color: var(--bdr);
 }
 .lang-btn {
   display: inline-flex;
@@ -226,7 +216,6 @@ body:not(.is-loading) .loader {
   color: rgba(255, 253, 249, 0.7);
   pointer-events: none;
 }
-.nav.is-solid .lang-btn { color: var(--ink3); }
 .lang-btn.is-on {
   background: var(--white);
   color: var(--ink);
