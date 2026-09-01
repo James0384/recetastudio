@@ -309,19 +309,41 @@
     const video = document.querySelector(".hero-loop");
     if (!video) return;
     if (reduce) {
-      video.pause();
       video.removeAttribute("autoplay");
       return;
     }
     video.muted = true;
     video.defaultMuted = true;
     video.playsInline = true;
+    video.setAttribute("muted", "");
     video.setAttribute("playsinline", "");
     video.setAttribute("webkit-playsinline", "");
-    const play = () => video.play().catch(() => {});
-    play();
-    video.addEventListener("loadeddata", play);
-    video.addEventListener("canplay", play);
+
+    const play = () => {
+      video.muted = true;
+      const p = video.play();
+      if (p) p.catch(() => {});
+    };
+
+    const start = () => {
+      play();
+      video.addEventListener("canplay", play, { once: true });
+    };
+
+    if (document.body.classList.contains("is-loading")) {
+      const obs = new MutationObserver(() => {
+        if (!document.body.classList.contains("is-loading")) {
+          obs.disconnect();
+          start();
+        }
+      });
+      obs.observe(document.body, { attributes: true, attributeFilter: ["class"] });
+    } else {
+      start();
+    }
+
+    document.addEventListener("touchstart", play, { passive: true });
+    document.addEventListener("click", play);
     document.addEventListener("visibilitychange", () => {
       if (document.visibilityState === "visible") play();
     });
