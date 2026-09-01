@@ -401,7 +401,7 @@ body:not(.is-loading) .loader {
   object-position: top;
   background: #1a1020;
 }
-.hero-loop-still { display: none; }
+.device-bezel .hero-loop-still { display: none; }
 
 .device-island {
   position: absolute;
@@ -1028,8 +1028,8 @@ body::after {
   .loader img,
   .scroll-cue::after { animation: none !important; }
   .glist li { opacity: 1; transform: none; }
-  .hero-loop { display: none; }
-  .hero-loop-still { display: block; }
+  .device-bezel .hero-loop { display: none; }
+  .device-bezel .hero-loop-still { display: block; }
 }
 
 @media (max-width: 719px) {
