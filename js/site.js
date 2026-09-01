@@ -320,6 +320,23 @@
     window.setTimeout(() => document.body.classList.remove("is-loading"), 700);
   }
 
+  function heroLoop() {
+    const video = document.querySelector(".hero-loop");
+    if (!video) return;
+    if (reduce) {
+      video.pause();
+      video.removeAttribute("autoplay");
+      return;
+    }
+    const play = () => video.play().catch(() => {});
+    play();
+    const io = new IntersectionObserver(([entry]) => {
+      if (entry.isIntersecting) play();
+      else video.pause();
+    }, { threshold: 0.2 });
+    io.observe(video);
+  }
+
   document.querySelectorAll('a[href="' + APP + '"]').forEach((a) => {
     a.rel = "noopener noreferrer";
   });
@@ -340,6 +357,7 @@
   steam();
   tilt();
   grocery();
+  heroLoop();
   window.addEventListener("load", hideLoader);
   window.setTimeout(hideLoader, 1600);
 })();

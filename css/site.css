@@ -391,14 +391,18 @@ body:not(.is-loading) .loader {
     inset 0 0 0 1px rgba(255, 255, 255, 0.08),
     0 0 0 1px rgba(0, 0, 0, 0.4);
 }
-.device-bezel img {
+.device-bezel img,
+.device-bezel video {
   width: 100%;
+  display: block;
   border-radius: 26px;
   aspect-ratio: 1170 / 2532;
   object-fit: cover;
   object-position: top;
   background: #1a1020;
 }
+.hero-loop-still { display: none; }
+
 .device-island {
   position: absolute;
   top: 18px;
@@ -1024,6 +1028,8 @@ body::after {
   .loader img,
   .scroll-cue::after { animation: none !important; }
   .glist li { opacity: 1; transform: none; }
+  .hero-loop { display: none; }
+  .hero-loop-still { display: block; }
 }
 
 @media (max-width: 719px) {
