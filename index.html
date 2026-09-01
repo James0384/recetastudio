@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>Receta Studio — Recipe, meet Receta</title>
+  <meta name="description" content="Save the page from the cookbook, the link from a friend, and the dish you want tonight. Receta Studio is a bilingual kitchen for English and Spanish home cooks." />
+  <meta name="theme-color" content="#2E1842" />
+  <meta name="color-scheme" content="light" />
+  <link rel="canonical" href="https://recetastudio.com/" />
+  <link rel="preload" as="image" href="./assets/atmosphere/hero-dusk.jpg" media="(min-width: 721px)" />
+  <link rel="preload" as="image" href="./assets/atmosphere/hero-steam.jpg" media="(max-width: 720px)" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Receta Studio" />
+  <meta property="og:title" content="Receta Studio — Recipe, meet Receta" />
+  <meta property="og:description" content="Two languages. One kitchen. Save, cook, plan, and shop in Receta Studio." />
+  <meta property="og:image" content="https://recetastudio.com/assets/atmosphere/chimichurri.jpg" />
+  <meta property="og:url" content="https://recetastudio.com/" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Receta Studio" />
+  <meta name="twitter:description" content="Two languages. One kitchen." />
+  <meta name="twitter:image" content="https://recetastudio.com/assets/atmosphere/chimichurri.jpg" />
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/brand/favicon-32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="./assets/brand/favicon-16.png" />
+  <link rel="apple-touch-icon" href="./assets/brand/apple-touch-icon.png" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Source+Sans+3:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="./css/site.css" />
+</head>
+<body class="is-loading">
+  <div class="loader" id="loader" aria-hidden="true">
+    <img src="./assets/brand/icon.png" alt="" width="88" height="88" />
+    <p>Receta Studio</p>
+  </div>
+
+  <a class="skip" href="#main">Skip to content</a>
+
+  <header class="nav" id="nav">
+    <a class="nav-brand" href="#top" aria-label="Receta Studio">
+      <img class="nav-logo nav-logo-light" src="./assets/brand/logo-white.svg" alt="Receta Studio" />
+      <img class="nav-logo nav-logo-ink" src="./assets/brand/logo-ink.svg" alt="" />
+    </a>
+    <div class="nav-end">
+      <button type="button" class="lang" aria-label="English. Switch to Spanish.">
+        <span class="lang-btn is-on" data-lang="en" aria-hidden="true">EN</span>
+        <span class="lang-btn" data-lang="es" aria-hidden="true">ES</span>
+      </button>
+      <a class="btn btn-cta nav-cta" href="https://app.recetastudio.com">
+        <span class="nav-cta-slot">
+          <span class="nav-cta-sizer" data-nav-sizer="en" aria-hidden="true">Open the app</span>
+          <span class="nav-cta-sizer" data-nav-sizer="es" aria-hidden="true">Abrir la app</span>
+          <span class="nav-cta-live" data-i18n="nav.open">Open the app</span>
+        </span>
+      </a>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero" id="top">
+      <div class="hero-media" aria-hidden="true">
+        <picture>
+          <source media="(max-width: 720px)" srcset="./assets/atmosphere/hero-steam.jpg" />
+          <img src="./assets/atmosphere/hero-dusk.jpg" alt="" fetchpriority="high" />
+        </picture>
+        <div class="hero-shade"></div>
+        <canvas class="hero-steam" id="steam"></canvas>
+      </div>
+
+      <div class="hero-grid">
+        <div class="hero-copy">
+          <p class="kicker hero-kicker">
+            <span>Recipe</span>
+            <span class="kicker-rule" aria-hidden="true"></span>
+            <span>Receta</span>
+          </p>
+          <h1 class="hero-title" data-i18n="hero.title">Tonight is already cooking.</h1>
+          <p class="hero-lede" data-i18n="hero.lede">Save the page from the cookbook, the link from a friend, and the dish you want tonight. English and Spanish, the way you actually cook.</p>
+          <div class="hero-actions">
+            <a class="btn btn-cta btn-lg" href="https://app.recetastudio.com" data-i18n="hero.cta">Open Receta Studio</a>
+            <p class="hero-note" data-i18n="hero.note">On the web today. iPhone and Android, coming soon.</p>
+          </div>
+        </div>
+
+        <div class="hero-stage" data-tilt>
+          <img class="hero-plate" src="./assets/atmosphere/chimichurri.jpg" alt="" />
+          <figure class="device device-hero">
+            <div class="device-bezel">
+              <span class="device-island"></span>
+              <img src="./assets/screens/discover.jpg" alt="Discover in Receta Studio, featuring Chimichurri and In Season recipes." />
+            </div>
+          </figure>
+        </div>
+      </div>
+
+      <a class="scroll-cue" href="#hook" data-i18n="hero.scroll">Scroll to cook</a>
+    </section>
+
+    <div class="tape" aria-hidden="true">
+      <div class="tape-track">
+        <span>Discover</span><i></i>
+        <span>Descubrir</span><i></i>
+        <span>Wizard</span><i></i>
+        <span>Creador</span><i></i>
+        <span>Recipes</span><i></i>
+        <span>Recetas</span><i></i>
+        <span>Planner</span><i></i>
+        <span>Planificador</span><i></i>
+        <span>Grocery</span><i></i>
+        <span>Compras</span><i></i>
+        <span>Cook Mode</span><i></i>
+        <span>Modo cocina</span><i></i>
+        <span>Import</span><i></i>
+        <span>Importar</span><i></i>
+        <span>Discover</span><i></i>
+        <span>Descubrir</span><i></i>
+        <span>Wizard</span><i></i>
+        <span>Creador</span><i></i>
+        <span>Recipes</span><i></i>
+        <span>Recetas</span><i></i>
+        <span>Planner</span><i></i>
+        <span>Planificador</span><i></i>
+        <span>Grocery</span><i></i>
+        <span>Compras</span><i></i>
+        <span>Cook Mode</span><i></i>
+        <span>Modo cocina</span><i></i>
+        <span>Import</span><i></i>
+        <span>Importar</span><i></i>
+      </div>
+    </div>
+
+    <section class="hook" id="hook">
+      <div class="hook-bg" id="hookBg">
+        <img src="./assets/food/fajitas.jpg" alt="" id="hookImg" />
+        <div class="hook-bg-shade"></div>
+      </div>
+      <div class="wrap hook-inner hook-layout">
+        <div class="hook-copy">
+          <p class="kicker kicker-on-dark" data-i18n="hook.kicker">Recipe Wizard</p>
+          <h2 class="display display-on-dark" data-i18n="hook.title">What are you making?</h2>
+          <p class="lede lede-on-dark" data-i18n="hook.hint">Name a dish if you have one, or tap meal, course, and format. Skip anything you don’t care about.</p>
+        </div>
+
+        <figure class="device device-wizard">
+          <div class="device-bezel">
+            <span class="device-island"></span>
+            <img src="./assets/screens/wizard.jpg" alt="Recipe Wizard: What are you making? Meal, course, and format chips." />
+          </div>
+        </figure>
+
+        <div class="moods" role="list">
+          <button class="mood is-on" type="button" role="listitem" data-dish="tacos" aria-pressed="true">
+            <span class="mood-photo"><img src="./assets/food/fajitas.jpg" alt="" /></span>
+            <span class="mood-copy">
+              <strong data-i18n="dish.tacos.label">Weeknight tacos</strong>
+              <em data-i18n="dish.tacos.meta">Dinner · Main · Tacos</em>
+            </span>
+          </button>
+          <button class="mood" type="button" role="listitem" data-dish="cool" aria-pressed="false">
+            <span class="mood-photo"><img src="./assets/food/watermelon.jpg" alt="" /></span>
+            <span class="mood-copy">
+              <strong data-i18n="dish.cool.label">Something cool</strong>
+              <em data-i18n="dish.cool.meta">Lunch · Side · Salad</em>
+            </span>
+          </button>
+          <button class="mood" type="button" role="listitem" data-dish="soup" aria-pressed="false">
+            <span class="mood-photo"><img src="./assets/food/locro.jpg" alt="" /></span>
+            <span class="mood-copy">
+              <strong data-i18n="dish.soup.label">A pot of soup</strong>
+              <em data-i18n="dish.soup.meta">Dinner · Main · Soup</em>
+            </span>
+          </button>
+          <button class="mood" type="button" role="listitem" data-dish="feast" aria-pressed="false">
+            <span class="mood-photo"><img src="./assets/food/fritada.jpg" alt="" /></span>
+            <span class="mood-copy">
+              <strong data-i18n="dish.feast.label">A feast</strong>
+              <em data-i18n="dish.feast.meta">Dinner · Main</em>
+            </span>
+          </button>
+        </div>
+
+        <aside class="hook-bar" id="hookCard">
+          <p class="hook-card-kicker" data-i18n="hook.cardKicker">How it works</p>
+          <ol class="hook-steps">
+            <li data-i18n="hook.step1">What you’re making — meal, course, format.</li>
+            <li data-i18n="hook.step2">Time, servings, and what’s in the pantry.</li>
+            <li data-i18n="hook.step3">Choose from recipes that fit.</li>
+          </ol>
+          <p class="hook-example">
+            <span class="hook-example-kicker" data-i18n="hook.exampleKicker">For example</span>
+            <strong id="hookExampleLabel">Weeknight tacos</strong>
+            <span id="hookExampleMeta">Dinner · Main · Tacos</span>
+            <span class="hook-example-arrow" aria-hidden="true">→</span>
+            <span id="hookExampleResult">Chicken fajitas</span>
+          </p>
+        </aside>
+      </div>
+    </section>
+
+    <section class="chapter import" id="import">
+      <div class="wrap chapter-grid">
+        <div class="chapter-copy">
+          <p class="kicker" data-i18n="import.kicker">Import</p>
+          <h2 class="display" data-i18n="import.title">From a cookbook page to a recipe you can cook.</h2>
+          <p class="lede" data-i18n="import.body">Photograph the page. Paste a link. Paste the text. It lands in your collection — ingredients, steps, and a grocery list.</p>
+          <p class="aside-line" data-i18n="import.share">Share from any app — coming with iPhone and Android.</p>
+        </div>
+        <div class="import-stage">
+          <figure class="book">
+            <img src="./assets/cookbook/page.jpg" alt="A cookbook page for Guava Swirls, original recipe copy." />
+          </figure>
+          <figure class="device device-import">
+            <div class="device-bezel">
+              <span class="device-island"></span>
+              <img src="./assets/screens/import.jpg" alt="Import Recipe: Photos, From URL, Files, or Paste Text." />
+            </div>
+          </figure>
+          <figure class="share-chip">
+            <img src="./assets/screens/share.jpg" alt="Share to Receta — coming with iPhone and Android." />
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <section class="chapter discover" id="discover">
+      <div class="wrap">
+        <div class="chapter-copy chapter-copy-center">
+          <p class="kicker" data-i18n="discover.kicker">Discover</p>
+          <h2 class="display" data-i18n="discover.title">What’s in season, what’s on the holiday, what’s worth cooking this week.</h2>
+          <p class="lede" data-i18n="discover.body">Rails that move with the calendar — summer salads, Independence Day plates, dinners for this week.</p>
+        </div>
+      </div>
+      <div class="rail" tabindex="0" aria-label="Dishes from Discover">
+        <figure class="rail-card">
+          <img src="./assets/atmosphere/chimichurri.jpg" alt="Chimichurri plate" />
+          <figcaption>Chimichurri</figcaption>
+        </figure>
+        <figure class="rail-card">
+          <img src="./assets/food/watermelon.jpg" alt="Watermelon feta salad" />
+          <figcaption>Watermelon feta</figcaption>
+        </figure>
+        <figure class="rail-card">
+          <img src="./assets/food/fritada.jpg" alt="Fritada with mote" />
+          <figcaption>Fritada con mote</figcaption>
+        </figure>
+        <figure class="rail-card">
+          <img src="./assets/food/ceviche.jpg" alt="Shrimp ceviche" />
+          <figcaption>Ceviche de camarón</figcaption>
+        </figure>
+        <figure class="rail-card">
+          <img src="./assets/food/empanadas.jpg" alt="Empanadas" />
+          <figcaption>Empanadas</figcaption>
+        </figure>
+        <figure class="rail-card">
+          <img src="./assets/food/locro.jpg" alt="Locro de papa" />
+          <figcaption>Locro de papa</figcaption>
+        </figure>
+        <figure class="rail-card">
+          <img src="./assets/food/fish-tacos.jpg" alt="Fish tacos" />
+          <figcaption>Fish tacos</figcaption>
+        </figure>
+        <figure class="rail-card">
+          <img src="./assets/food/tres-leches.jpg" alt="Tres leches cake" />
+          <figcaption>Tres leches</figcaption>
+        </figure>
+        <figure class="rail-card">
+          <img src="./assets/food/tigrillo.jpg" alt="Tigrillo" />
+          <figcaption>Tigrillo</figcaption>
+        </figure>
+        <figure class="rail-card">
+          <img src="./assets/food/chiles-rellenos.jpg" alt="Chiles rellenos" />
+          <figcaption>Chiles rellenos</figcaption>
+        </figure>
+      </div>
+      <div class="wrap discover-phone">
+        <figure class="device">
+          <div class="device-bezel">
+            <span class="device-island"></span>
+            <img src="./assets/screens/discover.jpg" alt="Discover tab with Chimichurri, In Season, and Ecuador Independence Day." />
+          </div>
+        </figure>
+        <figure class="device">
+          <div class="device-bezel">
+            <span class="device-island"></span>
+            <img src="./assets/screens/recipes.jpg" alt="My Recipes with Alambre and Chimichurri." />
+          </div>
+        </figure>
+      </div>
+    </section>
+
+    <section class="chapter cook" id="cook">
+      <div class="cook-media" aria-hidden="true">
+        <img src="./assets/atmosphere/steam-pot.jpg" alt="" />
+        <div class="cook-shade"></div>
+      </div>
+      <div class="wrap cook-grid">
+        <div class="chapter-copy">
+          <p class="kicker kicker-on-dark" data-i18n="cook.kicker">Cook Mode</p>
+          <h2 class="display display-on-dark" data-i18n="cook.title">Hands on the pan. Type that stays out of the way.</h2>
+          <p class="lede lede-on-dark" data-i18n="cook.body">The whole recipe in bigger type — ingredients, steps, servings, and units. If a step has a time, start a timer on it. Switch language at the stove. The screen stays on.</p>
+        </div>
+        <figure class="device">
+          <div class="device-bezel">
+            <span class="device-island"></span>
+            <img src="./assets/screens/cook.jpg" alt="Cook Mode for Peach Caprese: bigger type, servings, units, ingredients, and steps." />
+          </div>
+        </figure>
+      </div>
+    </section>
+
+    <section class="chapter grocery" id="grocery">
+      <div class="grocery-media" aria-hidden="true">
+        <img src="./assets/atmosphere/ingredients.jpg" alt="" />
+      </div>
+      <div class="wrap chapter-grid grocery-grid">
+        <div class="chapter-copy">
+          <p class="kicker" data-i18n="grocery.kicker">Grocery</p>
+          <h2 class="display" data-i18n="grocery.title">The list writes itself.</h2>
+          <p class="lede" data-i18n="grocery.body">Pantry photos, aisle groups, and every recipe on the week’s plan — one list for the store.</p>
+          <ul class="glist" id="glist">
+            <li><i></i><span data-i18n="g.salmon">Salmon</span></li>
+            <li><i></i><span data-i18n="g.onion">Onions</span></li>
+            <li><i></i><span data-i18n="g.pepper">Bell pepper</span></li>
+            <li><i></i><span data-i18n="g.garlic">Garlic</span></li>
+            <li><i></i><span data-i18n="g.basil">Basil</span></li>
+            <li><i></i><span data-i18n="g.peach">Peach</span></li>
+            <li><i></i><span data-i18n="g.mozz">Mozzarella</span></li>
+            <li><i></i><span data-i18n="g.oil">Olive oil</span></li>
+          </ul>
+        </div>
+        <figure class="device">
+          <div class="device-bezel">
+            <span class="device-island"></span>
+            <img src="./assets/screens/grocery.jpg" alt="Grocery list with pantry items and shopping list." />
+          </div>
+        </figure>
+      </div>
+    </section>
+
+    <section class="chapter plan" id="plan">
+      <div class="wrap">
+        <div class="chapter-copy chapter-copy-center">
+          <p class="kicker" data-i18n="plan.kicker">Planner</p>
+          <h2 class="display" data-i18n="plan.title">The week, already decided.</h2>
+          <p class="lede" data-i18n="plan.body">Drop dinners onto days. Nutrition for the week, not a lecture for the day.</p>
+        </div>
+        <div class="week" role="list">
+          <article class="day" role="listitem">
+            <h3 data-i18n="day.mon">Mon</h3>
+            <div class="day-photo">
+              <img src="./assets/food/locro.jpg" alt="" draggable="false" />
+            </div>
+            <p>Locro de papa</p>
+          </article>
+          <article class="day" role="listitem">
+            <h3 data-i18n="day.tue">Tue</h3>
+            <div class="day-photo">
+              <img src="./assets/food/watermelon.jpg" alt="" draggable="false" />
+            </div>
+            <p>Watermelon feta</p>
+          </article>
+          <article class="day" role="listitem">
+            <h3 data-i18n="day.wed">Wed</h3>
+            <div class="day-photo">
+              <img src="./assets/food/fajitas.jpg" alt="" draggable="false" />
+            </div>
+            <p>Chicken fajitas</p>
+          </article>
+          <article class="day" role="listitem">
+            <h3 data-i18n="day.thu">Thu</h3>
+            <div class="day-photo">
+              <img src="./assets/food/peach-caprese.jpg" alt="" draggable="false" />
+            </div>
+            <p>Peach caprese</p>
+          </article>
+          <article class="day" role="listitem">
+            <h3 data-i18n="day.fri">Fri</h3>
+            <div class="day-photo">
+              <img src="./assets/food/empanadas.jpg" alt="" draggable="false" />
+            </div>
+            <p>Empanadas</p>
+          </article>
+          <article class="day" role="listitem">
+            <h3 data-i18n="day.sat">Sat</h3>
+            <div class="day-photo">
+              <img src="./assets/food/fritada.jpg" alt="" draggable="false" />
+            </div>
+            <p>Fritada</p>
+          </article>
+          <article class="day" role="listitem">
+            <h3 data-i18n="day.sun">Sun</h3>
+            <div class="day-photo">
+              <img src="./assets/food/tres-leches.jpg" alt="" draggable="false" />
+            </div>
+            <p>Tres leches</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="bilingual" id="languages">
+      <div class="wrap bilingual-grid">
+        <p class="kicker" data-i18n="lang.kicker">English · Español</p>
+        <h2 class="display" data-i18n="lang.title">Same&nbsp;recipe. Both&nbsp;languages.</h2>
+        <p class="lede" data-i18n="lang.body">Keep it how it arrived, or read it in your native&nbsp;language, English&nbsp;or&nbsp;Spanish.</p>
+        <div class="lang-pair" aria-hidden="true">
+          <span>Recipe</span>
+          <span class="lang-pair-rule"></span>
+          <span>Receta</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="close" id="open">
+      <div class="close-media" aria-hidden="true">
+        <img src="./assets/atmosphere/night-counter.jpg" alt="" />
+        <div class="close-shade"></div>
+      </div>
+      <div class="wrap close-inner">
+        <img class="close-logo" src="./assets/brand/logo-white.svg" alt="Receta Studio" />
+        <h2 class="display display-on-dark" data-i18n="cta.title">Come into the kitchen.</h2>
+        <p class="lede lede-on-dark" data-i18n="cta.body">Receta Studio on the web today. iPhone and Android, coming soon.</p>
+        <a class="btn btn-cta btn-lg" href="https://app.recetastudio.com" data-i18n="cta.button">Open Receta Studio</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="foot">
+    <div class="wrap foot-grid">
+      <a class="foot-brand" href="#top">
+        <img src="./assets/brand/logo-ink.svg" alt="Receta Studio" />
+      </a>
+      <nav class="foot-links">
+        <a href="https://app.recetastudio.com" data-i18n="nav.open">Open the app</a>
+        <a href="https://spinlightproductions.com/privacy.html" rel="noopener noreferrer" data-i18n="foot.privacy">Privacy</a>
+        <a href="https://spinlightproductions.com/terms.html" rel="noopener noreferrer" data-i18n="foot.terms">Terms</a>
+      </nav>
+      <p class="foot-made">Spin Light Productions LLC</p>
+    </div>
+  </footer>
+
+  <script src="./js/site.js"></script>
+</body>
+</html>
