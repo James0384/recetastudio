@@ -235,9 +235,21 @@
 
   function navSolid() {
     const nav = document.getElementById("nav");
-    const onScroll = () => nav.classList.toggle("is-solid", window.scrollY > 24);
-    onScroll();
-    window.addEventListener("scroll", onScroll, { passive: true });
+    const hero = document.querySelector(".hero");
+    if (!nav) return;
+
+    const apply = () => {
+      if (!hero) {
+        nav.classList.toggle("is-solid", window.scrollY > 8);
+        return;
+      }
+      const navBottom = nav.getBoundingClientRect().bottom;
+      nav.classList.toggle("is-solid", hero.getBoundingClientRect().bottom <= navBottom + 12);
+    };
+
+    apply();
+    window.addEventListener("scroll", apply, { passive: true });
+    window.addEventListener("resize", apply, { passive: true });
   }
 
   function steam() {
