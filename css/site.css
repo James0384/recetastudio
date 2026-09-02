@@ -711,18 +711,15 @@ body:not(.is-loading) .loader {
   width: 230px;
   transform: rotate(8deg);
 }
-.share-chip {
+.device-share {
   position: absolute;
-  left: 12%;
-  bottom: -8%;
+  left: 6%;
+  bottom: -6%;
   margin: 0;
-  width: 180px;
-  border-radius: 22px;
-  overflow: hidden;
-  box-shadow: var(--shadow-lg);
-  transform: rotate(-3deg);
+  width: 168px;
+  transform: rotate(-4deg);
+  z-index: 2;
 }
-.share-chip img { aspect-ratio: 1170 / 2532; object-fit: cover; object-position: 50% 62%; }
 
 /* Discover */
 .discover { background: var(--cream); padding-bottom: 40px; }
@@ -1058,7 +1055,7 @@ body::after {
   .nav-cta { display: none; }
   .import-stage { min-height: 480px; }
   .device-import { width: 180px; }
-  .share-chip { display: none; }
+  .device-share { width: 132px; left: 0; bottom: -4%; }
   .hero-plate { width: 62%; right: -4%; opacity: 0.9; }
   .hero-title {
     font-size: clamp(34px, 8.6vw, 44px);
