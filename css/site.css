@@ -720,6 +720,18 @@ body:not(.is-loading) .loader {
   transform: rotate(-4deg);
   z-index: 2;
 }
+.device-share .device-bezel {
+  padding: 4px;
+  border-radius: 28px;
+}
+.device-share .device-bezel img {
+  border-radius: 24px;
+}
+.device-share .device-island {
+  top: 10px;
+  width: 52px;
+  height: 12px;
+}
 
 /* Discover */
 .discover { background: var(--cream); padding-bottom: 40px; }
