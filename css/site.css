@@ -822,7 +822,7 @@ body:not(.is-loading) .loader {
   pointer-events: none;
 }
 .lens[data-band="season"] img { object-position: 50% 58%; }
-.lens[data-band="holiday"] img { object-position: 48% 40%; }
+.lens[data-band="holiday"] img { object-position: 50% 46%; }
 .lens[data-band="featured"] img { object-position: 50% 46%; }
 .lens strong {
   display: block;
