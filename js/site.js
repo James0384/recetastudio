@@ -2,6 +2,39 @@
   "use strict";
 
   const APP = "https://app.recetastudio.com";
+  const APP_STORE = "https://apps.apple.com/app/receta-studio/id6775508328";
+  const PLAY_STORE = "https://play.google.com/store/apps/details?id=com.spinlightproductions.recetastudio";
+  const STORE_ART = {
+    en: {
+      apple: { src: "./assets/brand/badge-app-store-en.svg", alt: "Download on the App Store" },
+      play: { src: "./assets/brand/badge-google-play-en.svg", alt: "Get it on Google Play" },
+    },
+    es: {
+      apple: { src: "./assets/brand/badge-app-store-es.svg", alt: "Descargar en el App Store" },
+      play: { src: "./assets/brand/badge-google-play-es.svg", alt: "Descargar en Google Play" },
+    },
+  };
+
+  function storePlatform() {
+    const ua = navigator.userAgent || "";
+    if (/Android/i.test(ua)) return "android";
+    if (/iPhone|iPad|iPod/i.test(ua)) return "ios";
+    return "other";
+  }
+
+  function applyStores() {
+    const plat = storePlatform();
+    document.querySelectorAll("[data-store-row]").forEach((row) => {
+      row.dataset.platform = plat;
+    });
+    const art = STORE_ART[lang] || STORE_ART.en;
+    document.querySelectorAll("[data-store]").forEach((img) => {
+      const spec = art[img.getAttribute("data-store")];
+      if (!spec) return;
+      if (img.getAttribute("src") !== spec.src) img.src = spec.src;
+      img.alt = spec.alt;
+    });
+  }
 
   const COPY = {
     en: {
@@ -9,7 +42,7 @@
       "hero.title": "Tonight is already cooking.",
       "hero.lede": "Save the page from the cookbook, the link from a friend, and the dish you want tonight. English and Spanish, the way you actually cook.",
       "hero.cta": "Open Receta Studio",
-      "hero.note": "On the web today. iPhone and Android, coming soon.",
+      "hero.note": "On iPhone, Android, and the web.",
       "hero.scroll": "Scroll to cook",
       "hook.kicker": "Recipe Wizard",
       "hook.title": "What are you making?",
@@ -35,7 +68,7 @@
       "import.kicker": "Import",
       "import.title": "From a cookbook page to a recipe you can actually\u00A0cook.",
       "import.body": "Snap the page. Paste a link. Paste the text. Ingredients, steps, and a grocery\u00A0list land in your\u00A0collection.",
-      "import.share": "Share from any app — coming with iPhone and Android.",
+      "import.share": "Share from any app on iPhone and Android.",
       "discover.kicker": "Discover",
       "discover.title": "What’s in season. What’s on the holiday. What’s for this\u00A0week.",
       "discover.body": "Summer salads, Independence Day plates, Tuesday\u00A0dinner — the kitchen follows the\u00A0calendar.",
@@ -66,9 +99,10 @@
       "lang.kicker": "English · Español",
       "lang.title": "Same\u00A0recipe. Both\u00A0languages.",
       "lang.body": "Keep it how it arrived, or read it in your native\u00A0language, English\u00A0or\u00A0Spanish.",
-      "price.kicker": "Receta Studio",
+      "price.kicker": "Free Trial",
       "price.title": "Seven days in the\u00A0kitchen. Then you\u00A0decide.",
       "price.body": "The whole kitchen is yours for a week. After that, keep what you saved — or keep going for $5.99 a month. Cancel anytime.",
+      "price.badge": "7-Day Free Trial",
       "price.pro.title": "Receta Studio Pro",
       "price.pro.body": "The whole kitchen, every month.",
       "price.per": "/ month",
@@ -88,20 +122,23 @@
       "price.feat.lang.body": "The same recipe, in the language you want tonight.",
       "price.feat.nutrition.name": "Nutrition",
       "price.feat.nutrition.body": "On every recipe you cook.",
-      "price.note": "On the web now. Phone apps on the way.",
+      "price.note": "On iPhone, Android, and the web.",
       "price.cta": "Open Receta Studio",
       "cta.title": "The kitchen’s\u00A0open.",
-      "cta.body": "On the web now. Phone apps on the\u00A0way.",
+      "cta.body": "On iPhone, Android, and the\u00A0web.",
       "cta.button": "Open Receta Studio",
+      "foot.apple": "App Store",
+      "foot.play": "Google Play",
       "foot.privacy": "Privacy",
       "foot.terms": "Terms",
+      "foot.legal": "Apple, the Apple logo, App Store, and iPhone are trademarks of Apple Inc., registered in the U.S. and other countries. Google Play and the Google Play logo are trademarks of Google LLC.",
     },
     es: {
       "nav.open": "Abrir la app",
       "hero.title": "Esta noche ya se está cocinando.",
       "hero.lede": "Guarda la página del libro, el enlace de alguien y el plato que quieres hoy. En inglés y en español, como realmente cocinas.",
       "hero.cta": "Abrir Receta Studio",
-      "hero.note": "En la web hoy. iPhone y Android, muy pronto.",
+      "hero.note": "En iPhone, Android y la web.",
       "hero.scroll": "Baja para cocinar",
       "hook.kicker": "Asistente de recetas",
       "hook.title": "¿Qué vas a preparar?",
@@ -127,7 +164,7 @@
       "import.kicker": "Importar",
       "import.title": "De la página del libro a una receta que de\u00A0verdad puedes\u00A0cocinar.",
       "import.body": "Foto a la página. Pega un enlace. Pega el texto. Ingredientes, pasos y una lista de\u00A0compras llegan a tu\u00A0colección.",
-      "import.share": "Comparte desde cualquier app — llega con iPhone y Android.",
+      "import.share": "Comparte desde cualquier app en iPhone y Android.",
       "discover.kicker": "Descubrir",
       "discover.title": "Lo de la temporada. Lo del feriado. Lo de esta\u00A0semana.",
       "discover.body": "Ensaladas de verano, platos de Independencia, la cena del\u00A0martes — la cocina sigue el\u00A0calendario.",
@@ -158,9 +195,10 @@
       "lang.kicker": "English · Español",
       "lang.title": "La\u00A0misma\u00A0receta. Los\u00A0dos\u00A0idiomas.",
       "lang.body": "Déjala como llegó, o léela en tu idioma, inglés\u00A0o\u00A0español.",
-      "price.kicker": "Receta Studio",
+      "price.kicker": "Prueba gratis",
       "price.title": "Siete días en la\u00A0cocina. Luego tú\u00A0decides.",
       "price.body": "Toda la cocina es tuya por una semana. Después te quedas con lo que guardaste — o sigues por $5.99 al mes. Cancela cuando quieras.",
+      "price.badge": "Prueba gratis de 7 días",
       "price.pro.title": "Receta Studio Pro",
       "price.pro.body": "Toda la cocina, cada mes.",
       "price.per": "/ mes",
@@ -180,13 +218,16 @@
       "price.feat.lang.body": "La misma receta, en el idioma que quieres esta noche.",
       "price.feat.nutrition.name": "Nutrición",
       "price.feat.nutrition.body": "En cada receta que cocinas.",
-      "price.note": "En la web ahora. Las apps del celular, en camino.",
+      "price.note": "En iPhone, Android y la web.",
       "price.cta": "Abrir Receta Studio",
       "cta.title": "La cocina está\u00A0abierta.",
-      "cta.body": "En la web ahora. Las apps del celular, en\u00A0camino.",
+      "cta.body": "En iPhone, Android y la\u00A0web.",
       "cta.button": "Abrir Receta Studio",
+      "foot.apple": "App Store",
+      "foot.play": "Google Play",
       "foot.privacy": "Privacidad",
       "foot.terms": "Términos",
+      "foot.legal": "Apple, el logotipo de Apple, App Store e iPhone son marcas comerciales de Apple Inc., registradas en EE. UU. y otros países. Google Play y el logotipo de Google Play son marcas comerciales de Google LLC.",
     },
   };
 
@@ -238,6 +279,7 @@
     document.title = title;
     const dish = document.querySelector(".mood.is-on")?.dataset.dish || "tacos";
     paintDish(dish);
+    applyStores();
   }
 
   function paintDish(id) {
@@ -397,7 +439,9 @@
     });
   }
 
-  document.querySelectorAll('a[href="' + APP + '"]').forEach((a) => {
+  document.querySelectorAll(
+    'a[href="' + APP + '"], a[href="' + APP_STORE + '"], a[href="' + PLAY_STORE + '"]'
+  ).forEach((a) => {
     a.rel = "noopener noreferrer";
   });
 

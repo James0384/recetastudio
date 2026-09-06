@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
   <title>Receta Studio — Recipe, meet Receta</title>
-  <meta name="description" content="Save the page from the cookbook, the link from a friend, and the dish you want tonight. Receta Studio is a bilingual kitchen for English and Spanish home cooks." />
+  <meta name="description" content="Save the page from the cookbook, the link from a friend, and the dish you want tonight. Receta Studio is a bilingual kitchen for English and Spanish home cooks — now on the App Store, Google Play, and the web." />
   <meta name="theme-color" content="#1a0b30" />
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   <meta name="color-scheme" content="dark" />
@@ -15,12 +15,12 @@
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="Receta Studio" />
   <meta property="og:title" content="Receta Studio — Recipe, meet Receta" />
-  <meta property="og:description" content="Two languages. One kitchen. Save, cook, plan, and shop in Receta Studio." />
+  <meta property="og:description" content="Two languages. One kitchen. Now on the App Store, Google Play, and the web." />
   <meta property="og:image" content="https://recetastudio.com/assets/atmosphere/chimichurri.jpg" />
   <meta property="og:url" content="https://recetastudio.com/" />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Receta Studio" />
-  <meta name="twitter:description" content="Two languages. One kitchen." />
+  <meta name="twitter:description" content="Two languages. One kitchen. Now on the App Store, Google Play, and the web." />
   <meta name="twitter:image" content="https://recetastudio.com/assets/atmosphere/chimichurri.jpg" />
 
   <link rel="icon" type="image/png" sizes="32x32" href="./assets/brand/favicon-32.png" />
@@ -30,7 +30,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Source+Sans+3:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="./css/site.css?v=20260903a" />
+  <link rel="stylesheet" href="./css/site.css?v=20260905b" />
 </head>
 <body class="is-loading">
   <div class="loader" id="loader" aria-hidden="true">
@@ -81,8 +81,16 @@
           <h1 class="hero-title" data-i18n="hero.title">Tonight is already cooking.</h1>
           <p class="hero-lede" data-i18n="hero.lede">Save the page from the cookbook, the link from a friend, and the dish you want tonight. English and Spanish, the way you actually cook.</p>
           <div class="hero-actions">
+            <div class="store-row" data-store-row>
+              <a class="store-badge store-badge-apple" href="https://apps.apple.com/app/receta-studio/id6775508328" rel="noopener noreferrer">
+                <img data-store="apple" src="./assets/brand/badge-app-store-en.svg" width="120" height="40" alt="Download on the App Store" />
+              </a>
+              <a class="store-badge store-badge-play" href="https://play.google.com/store/apps/details?id=com.spinlightproductions.recetastudio" rel="noopener noreferrer">
+                <img data-store="play" src="./assets/brand/badge-google-play-en.svg" width="135" height="40" alt="Get it on Google Play" />
+              </a>
+            </div>
             <a class="btn btn-cta btn-lg" href="https://app.recetastudio.com" data-i18n="hero.cta">Open Receta Studio</a>
-            <p class="hero-note" data-i18n="hero.note">On the web today. iPhone and Android, coming soon.</p>
+            <p class="hero-note" data-i18n="hero.note">On iPhone, Android, and the web.</p>
           </div>
         </div>
 
@@ -219,7 +227,7 @@
           <p class="kicker" data-i18n="import.kicker">Import</p>
           <h2 class="display" data-i18n="import.title">From a cookbook page to a recipe you can actually&nbsp;cook.</h2>
           <p class="lede" data-i18n="import.body">Snap the page. Paste a link. Paste the text. Ingredients, steps, and a grocery&nbsp;list land in your&nbsp;collection.</p>
-          <p class="aside-line" data-i18n="import.share">Share from any app — coming with iPhone and Android.</p>
+          <p class="aside-line" data-i18n="import.share">Share from any app on iPhone and Android.</p>
         </div>
         <div class="import-stage">
           <figure class="book">
@@ -234,7 +242,7 @@
           <figure class="device device-share">
             <div class="device-bezel">
               <span class="device-island"></span>
-              <img src="./assets/screens/share.jpg" alt="Share to Receta Studio from a recipe site — coming with iPhone and Android." />
+              <img src="./assets/screens/share.jpg" alt="Share to Receta Studio from a recipe site on iPhone and Android." />
             </div>
           </figure>
         </div>
@@ -432,12 +440,13 @@
 
     <section class="pricing" id="pricing">
       <div class="wrap pricing-inner">
-        <p class="kicker" data-i18n="price.kicker">Receta Studio</p>
+        <p class="kicker" data-i18n="price.kicker">Free Trial</p>
         <h2 class="display" data-i18n="price.title">Seven days in the&nbsp;kitchen. Then you&nbsp;decide.</h2>
         <p class="lede" data-i18n="price.body">The whole kitchen is yours for a week. After that, keep what you saved — or keep going for $5.99 a month. Cancel anytime.</p>
 
         <div class="price-cols">
           <article class="price-card is-pro">
+            <p class="price-badge" data-i18n="price.badge">7-Day Free Trial</p>
             <h3 data-i18n="price.pro.title">Receta Studio Pro</h3>
             <p class="price-card-lede" data-i18n="price.pro.body">The whole kitchen, every month.</p>
             <p class="price-amt">$5.99 <span data-i18n="price.per">/ month</span></p>
@@ -479,7 +488,15 @@
           </article>
         </div>
 
-        <p class="pricing-note" data-i18n="price.note">On the web now. Phone apps on the way.</p>
+        <p class="pricing-note" data-i18n="price.note">On iPhone, Android, and the web.</p>
+        <div class="store-row store-row-center" data-store-row>
+          <a class="store-badge store-badge-apple" href="https://apps.apple.com/app/receta-studio/id6775508328" rel="noopener noreferrer">
+            <img data-store="apple" src="./assets/brand/badge-app-store-en.svg" width="120" height="40" alt="Download on the App Store" />
+          </a>
+          <a class="store-badge store-badge-play" href="https://play.google.com/store/apps/details?id=com.spinlightproductions.recetastudio" rel="noopener noreferrer">
+            <img data-store="play" src="./assets/brand/badge-google-play-en.svg" width="135" height="40" alt="Get it on Google Play" />
+          </a>
+        </div>
       </div>
     </section>
 
@@ -491,7 +508,15 @@
       <div class="wrap close-inner">
         <img class="close-logo" src="./assets/brand/logo-white.svg" alt="Receta Studio" />
         <h2 class="display display-on-dark" data-i18n="cta.title">The kitchen’s&nbsp;open.</h2>
-        <p class="lede lede-on-dark" data-i18n="cta.body">On the web now. Phone apps on the&nbsp;way.</p>
+        <p class="lede lede-on-dark" data-i18n="cta.body">On iPhone, Android, and the&nbsp;web.</p>
+        <div class="store-row store-row-center" data-store-row>
+          <a class="store-badge store-badge-apple" href="https://apps.apple.com/app/receta-studio/id6775508328" rel="noopener noreferrer">
+            <img data-store="apple" src="./assets/brand/badge-app-store-en.svg" width="120" height="40" alt="Download on the App Store" />
+          </a>
+          <a class="store-badge store-badge-play" href="https://play.google.com/store/apps/details?id=com.spinlightproductions.recetastudio" rel="noopener noreferrer">
+            <img data-store="play" src="./assets/brand/badge-google-play-en.svg" width="135" height="40" alt="Get it on Google Play" />
+          </a>
+        </div>
         <a class="btn btn-cta btn-lg" href="https://app.recetastudio.com" data-i18n="cta.button">Open Receta Studio</a>
       </div>
     </section>
@@ -503,14 +528,17 @@
         <img src="./assets/brand/logo-ink.svg" alt="Receta Studio" />
       </a>
       <nav class="foot-links">
+        <a href="https://apps.apple.com/app/receta-studio/id6775508328" rel="noopener noreferrer" data-i18n="foot.apple">App Store</a>
+        <a href="https://play.google.com/store/apps/details?id=com.spinlightproductions.recetastudio" rel="noopener noreferrer" data-i18n="foot.play">Google Play</a>
         <a href="https://app.recetastudio.com" data-i18n="nav.open">Open the app</a>
         <a href="https://spinlightproductions.com/privacy.html" rel="noopener noreferrer" data-i18n="foot.privacy">Privacy</a>
         <a href="https://spinlightproductions.com/terms.html" rel="noopener noreferrer" data-i18n="foot.terms">Terms</a>
       </nav>
       <p class="foot-made">Spin Light Productions LLC</p>
+      <p class="foot-legal" data-i18n="foot.legal">Apple, the Apple logo, App Store, and iPhone are trademarks of Apple Inc., registered in the U.S. and other countries. Google Play and the Google Play logo are trademarks of Google LLC.</p>
     </div>
   </footer>
 
-  <script src="./js/site.js?v=20260903a"></script>
+  <script src="./js/site.js?v=20260905b"></script>
 </body>
 </html>
