@@ -806,9 +806,15 @@ body:not(.is-loading) .loader {
 .discover-phone {
   display: flex;
   justify-content: center;
+  flex-wrap: wrap;
+  gap: 28px;
   padding: 36px 0 20px;
 }
-.discover-phone .device { width: min(100%, 300px); }
+.discover-phone .device { width: min(92%, 280px); }
+.discover-phone .device-recipes { display: none; }
+@media (min-width: 800px) {
+  .discover-phone .device-recipes { display: block; }
+}
 
 /* Cook */
 .cook {
