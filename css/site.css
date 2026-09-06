@@ -804,14 +804,11 @@ body:not(.is-loading) .loader {
   font-weight: 600;
 }
 .discover-phone {
-  display: grid;
-  gap: 24px;
-  justify-items: center;
+  display: flex;
+  justify-content: center;
   padding: 36px 0 20px;
 }
-@media (min-width: 800px) {
-  .discover-phone { grid-template-columns: 280px 280px; justify-content: center; }
-}
+.discover-phone .device { width: min(100%, 300px); }
 
 /* Cook */
 .cook {
