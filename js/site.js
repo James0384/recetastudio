@@ -29,6 +29,33 @@
     });
   }
 
+  const SCREEN_ART = {
+    en: {
+      wizard: { src: "./assets/screens/wizard.jpg", alt: "Recipe Wizard: What are you making? Meal, course, and format chips." },
+      import: { src: "./assets/screens/import.jpg", alt: "Import Recipe: Photos, From URL, Files, or Paste Text." },
+      discover: { src: "./assets/screens/discover.jpg?v=20260906g", alt: "Discover: Chimichurri, In Season, and Labor Day." },
+      cook: { src: "./assets/screens/cook.jpg", alt: "Cook Mode for Peach Caprese: bigger type, servings, units, ingredients, and steps." },
+      grocery: { src: "./assets/screens/grocery.jpg", alt: "Grocery list with pantry items and shopping list." },
+    },
+    es: {
+      wizard: { src: "./assets/screens/wizard-es.jpg", alt: "Asistente de recetas: ¿Qué vas a preparar? Comida, plato y formato." },
+      import: { src: "./assets/screens/import-es.jpg", alt: "Importar receta: Fotos, Desde URL, Archivos o Pegar texto." },
+      discover: { src: "./assets/screens/discover-es.jpg", alt: "Descubrir: Chimichurri, De temporada y Día del Trabajo." },
+      cook: { src: "./assets/screens/cook-es.jpg", alt: "Modo cocina para Chimichurri: letra grande, porciones, unidades, ingredientes y pasos." },
+      grocery: { src: "./assets/screens/grocery-es.jpg", alt: "Lista de compras con despensa y artículos pendientes." },
+    },
+  };
+
+  function applyScreens() {
+    const art = SCREEN_ART[lang] || SCREEN_ART.en;
+    document.querySelectorAll("[data-screen]").forEach((img) => {
+      const spec = art[img.getAttribute("data-screen")];
+      if (!spec) return;
+      if (img.getAttribute("src") !== spec.src) img.src = spec.src;
+      img.alt = spec.alt;
+    });
+  }
+
   const COPY = {
     en: {
       "nav.open": "Open the app",
@@ -166,12 +193,12 @@
       "import.share": "Comparte desde cualquier app en iPhone y Android.",
       "discover.kicker": "Descubrir",
       "discover.title": "Lo de la temporada. Lo del feriado. Lo de esta\u00A0semana.",
-      "discover.body": "Ensaladas de verano, platos de Labor Day, la cena del\u00A0martes — la cocina sigue el\u00A0calendario.",
+      "discover.body": "Ensaladas de verano, platos del Día del Trabajo, la cena del\u00A0martes — la cocina sigue el\u00A0calendario.",
       "discover.lens.season": "De temporada",
       "discover.lens.holiday": "En el feriado",
       "discover.lens.featured": "Destacado",
       "discover.live.season": "Verano · vuelve con la temporada",
-      "discover.live.holiday": "Labor Day · la mesa ya lo sabe",
+      "discover.live.holiday": "Día del Trabajo · la mesa ya lo sabe",
       "discover.live.featured": "Chimichurri · en el mesón esta noche",
       "cook.kicker": "Modo cocina",
       "cook.title": "Las manos en la olla. Letra grande en el\u00A0mesón.",
@@ -285,6 +312,7 @@
     const dish = document.querySelector(".mood.is-on")?.dataset.dish || "tacos";
     paintDish(dish);
     applyStores();
+    applyScreens();
     const band = document.querySelector(".discover-stage")?.dataset.band;
     paintDiscover(band);
   }
