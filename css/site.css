@@ -212,8 +212,6 @@ body:not(.is-loading) .loader {
   outline: 2px solid var(--cta-a);
   outline-offset: 4px;
 }
-.store-row[data-platform="ios"] .store-badge-play { display: none; }
-.store-row[data-platform="android"] .store-badge-apple { display: none; }
 
 /* Nav */
 .nav {

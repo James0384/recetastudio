@@ -15,18 +15,7 @@
     },
   };
 
-  function storePlatform() {
-    const ua = navigator.userAgent || "";
-    if (/Android/i.test(ua)) return "android";
-    if (/iPhone|iPad|iPod/i.test(ua)) return "ios";
-    return "other";
-  }
-
   function applyStores() {
-    const plat = storePlatform();
-    document.querySelectorAll("[data-store-row]").forEach((row) => {
-      row.dataset.platform = plat;
-    });
     const art = STORE_ART[lang] || STORE_ART.en;
     document.querySelectorAll(".store-badge").forEach((a) => {
       a.draggable = false;
