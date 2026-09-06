@@ -30,7 +30,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Source+Sans+3:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="./css/site.css?v=20260905f" />
+  <link rel="stylesheet" href="./css/site.css?v=20260906d" />
 </head>
 <body class="is-loading">
   <div class="loader" id="loader" aria-hidden="true">
@@ -250,68 +250,73 @@
     </section>
 
     <section class="chapter discover" id="discover">
-      <div class="wrap">
-        <div class="chapter-copy chapter-copy-center">
+      <div class="wrap discover-grid">
+        <div class="chapter-copy">
           <p class="kicker" data-i18n="discover.kicker">Discover</p>
           <h2 class="display" data-i18n="discover.title">What’s in season. What’s on the holiday. What’s for this&nbsp;week.</h2>
           <p class="lede" data-i18n="discover.body">Summer salads, Independence Day plates, Tuesday&nbsp;dinner — the kitchen follows the&nbsp;calendar.</p>
+          <div class="lenses" role="list">
+            <button class="lens is-on" type="button" role="listitem" data-band="season" aria-pressed="true">
+              <span class="lens-photo"><img src="./assets/food/watermelon.jpg" alt="" /></span>
+              <strong data-i18n="discover.lens.season">In season</strong>
+            </button>
+            <button class="lens" type="button" role="listitem" data-band="holiday" aria-pressed="false">
+              <span class="lens-photo"><img src="./assets/food/fritada.jpg" alt="" /></span>
+              <strong data-i18n="discover.lens.holiday">On the holiday</strong>
+            </button>
+            <button class="lens" type="button" role="listitem" data-band="featured" aria-pressed="false">
+              <span class="lens-photo"><img src="./assets/atmosphere/chimichurri.jpg" alt="" /></span>
+              <strong data-i18n="discover.lens.featured">Featured</strong>
+            </button>
+          </div>
+          <p class="discover-live" id="discoverLive" data-i18n="discover.live.season" aria-live="polite">Summer · refreshes with the season</p>
         </div>
-      </div>
-      <div class="rail" tabindex="0" aria-label="Dishes from Discover">
-        <figure class="rail-card">
-          <img src="./assets/atmosphere/chimichurri.jpg" alt="Chimichurri plate" />
-          <figcaption>Chimichurri</figcaption>
-        </figure>
-        <figure class="rail-card">
-          <img src="./assets/food/watermelon.jpg" alt="Watermelon feta salad" />
-          <figcaption>Watermelon feta</figcaption>
-        </figure>
-        <figure class="rail-card">
-          <img src="./assets/food/fritada.jpg" alt="Fritada with mote" />
-          <figcaption>Fritada con mote</figcaption>
-        </figure>
-        <figure class="rail-card">
-          <img src="./assets/food/ceviche.jpg" alt="Shrimp ceviche" />
-          <figcaption>Ceviche de camarón</figcaption>
-        </figure>
-        <figure class="rail-card">
-          <img src="./assets/food/empanadas.jpg" alt="Empanadas" />
-          <figcaption>Empanadas</figcaption>
-        </figure>
-        <figure class="rail-card">
-          <img src="./assets/food/locro.jpg" alt="Locro de papa" />
-          <figcaption>Locro de papa</figcaption>
-        </figure>
-        <figure class="rail-card">
-          <img src="./assets/food/fish-tacos.jpg" alt="Fish tacos" />
-          <figcaption>Fish tacos</figcaption>
-        </figure>
-        <figure class="rail-card">
-          <img src="./assets/food/tres-leches.jpg" alt="Tres leches cake" />
-          <figcaption>Tres leches</figcaption>
-        </figure>
-        <figure class="rail-card">
-          <img src="./assets/food/tigrillo.jpg" alt="Tigrillo" />
-          <figcaption>Tigrillo</figcaption>
-        </figure>
-        <figure class="rail-card">
-          <img src="./assets/food/chiles-rellenos.jpg" alt="Chiles rellenos" />
-          <figcaption>Chiles rellenos</figcaption>
-        </figure>
-      </div>
-      <div class="wrap discover-phone">
-        <figure class="device">
-          <div class="device-bezel">
-            <span class="device-island"></span>
-            <img src="./assets/screens/discover.jpg" alt="Discover tab with Chimichurri, In Season, and Ecuador Independence Day." />
+        <div class="discover-stage" data-band="season">
+          <div class="rail" tabindex="0" aria-label="Dishes from Discover">
+            <figure class="rail-card plate-1" data-band="season">
+              <img src="./assets/food/watermelon.jpg" alt="Watermelon feta salad" />
+              <figcaption>Watermelon feta</figcaption>
+            </figure>
+            <figure class="rail-card plate-2" data-band="season">
+              <img src="./assets/food/peach-caprese.jpg" alt="Peach caprese" />
+              <figcaption>Peach caprese</figcaption>
+            </figure>
+            <figure class="rail-card plate-3" data-band="season">
+              <img src="./assets/food/ceviche.jpg" alt="Shrimp ceviche" />
+              <figcaption>Ceviche de camarón</figcaption>
+            </figure>
+            <figure class="rail-card plate-1" data-band="holiday">
+              <img src="./assets/food/fritada.jpg" alt="Fritada with mote" />
+              <figcaption>Fritada con mote</figcaption>
+            </figure>
+            <figure class="rail-card plate-2" data-band="holiday">
+              <img src="./assets/food/locro.jpg" alt="Locro de papa" />
+              <figcaption>Locro de papa</figcaption>
+            </figure>
+            <figure class="rail-card plate-3" data-band="holiday">
+              <img src="./assets/food/empanadas.jpg" alt="Empanadas" />
+              <figcaption>Empanadas</figcaption>
+            </figure>
+            <figure class="rail-card plate-1" data-band="featured">
+              <img src="./assets/atmosphere/chimichurri.jpg" alt="Chimichurri plate" />
+              <figcaption>Chimichurri</figcaption>
+            </figure>
+            <figure class="rail-card plate-2" data-band="featured">
+              <img src="./assets/food/chiles-rellenos.jpg" alt="Chiles rellenos" />
+              <figcaption>Chiles rellenos</figcaption>
+            </figure>
+            <figure class="rail-card plate-3" data-band="featured">
+              <img src="./assets/food/tres-leches.jpg" alt="Tres leches cake" />
+              <figcaption>Tres leches</figcaption>
+            </figure>
           </div>
-        </figure>
-        <figure class="device device-recipes">
-          <div class="device-bezel">
-            <span class="device-island"></span>
-            <img src="./assets/screens/recipes.jpg" alt="My Recipes with Alambre and Chimichurri." />
-          </div>
-        </figure>
+          <figure class="device device-discover">
+            <div class="device-bezel">
+              <span class="device-island"></span>
+              <img src="./assets/screens/discover.jpg" alt="Discover: Chimichurri featured, In Season, and Ecuador Independence Day." />
+            </div>
+          </figure>
+        </div>
       </div>
     </section>
 
@@ -539,6 +544,6 @@
     </div>
   </footer>
 
-  <script src="./js/site.js?v=20260905f"></script>
+  <script src="./js/site.js?v=20260906d"></script>
 </body>
 </html>

@@ -65,6 +65,12 @@
       "discover.kicker": "Discover",
       "discover.title": "What’s in season. What’s on the holiday. What’s for this\u00A0week.",
       "discover.body": "Summer salads, Independence Day plates, Tuesday\u00A0dinner — the kitchen follows the\u00A0calendar.",
+      "discover.lens.season": "In season",
+      "discover.lens.holiday": "On the holiday",
+      "discover.lens.featured": "Featured",
+      "discover.live.season": "Summer · refreshes with the season",
+      "discover.live.holiday": "Ecuador Independence Day · the table already knows",
+      "discover.live.featured": "Chimichurri · on the counter tonight",
       "cook.kicker": "Cook Mode",
       "cook.title": "Hands on the pan. Big type on the\u00A0counter.",
       "cook.body": "Ingredients, steps, servings, units — large enough to read while you cook. A timer on any step that needs one. The screen stays\u00A0on.",
@@ -161,6 +167,12 @@
       "discover.kicker": "Descubrir",
       "discover.title": "Lo de la temporada. Lo del feriado. Lo de esta\u00A0semana.",
       "discover.body": "Ensaladas de verano, platos de Independencia, la cena del\u00A0martes — la cocina sigue el\u00A0calendario.",
+      "discover.lens.season": "De temporada",
+      "discover.lens.holiday": "En el feriado",
+      "discover.lens.featured": "Destacado",
+      "discover.live.season": "Verano · vuelve con la temporada",
+      "discover.live.holiday": "Independencia del Ecuador · la mesa ya lo sabe",
+      "discover.live.featured": "Chimichurri · en el mesón esta noche",
       "cook.kicker": "Modo cocina",
       "cook.title": "Las manos en la olla. Letra grande en el\u00A0mesón.",
       "cook.body": "Ingredientes, pasos, porciones, unidades — lo bastante grandes para leer mientras cocinas. Un temporizador en cualquier paso que lo necesite. La pantalla se queda\u00A0encendida.",
@@ -273,6 +285,8 @@
     const dish = document.querySelector(".mood.is-on")?.dataset.dish || "tacos";
     paintDish(dish);
     applyStores();
+    const band = document.querySelector(".discover-stage")?.dataset.band;
+    paintDiscover(band);
   }
 
   function paintDish(id) {
@@ -313,6 +327,29 @@
         });
         paintDish(btn.dataset.dish);
       });
+    });
+  }
+
+  function paintDiscover(band) {
+    const stage = document.querySelector(".discover-stage");
+    if (!stage) return;
+    const next = band || stage.dataset.band || "season";
+    stage.dataset.band = next;
+    document.querySelectorAll(".lens").forEach((b) => {
+      const on = b.dataset.band === next;
+      b.classList.toggle("is-on", on);
+      b.setAttribute("aria-pressed", on ? "true" : "false");
+    });
+    const live = document.getElementById("discoverLive");
+    const key = "discover.live." + next;
+    if (live && COPY[lang] && COPY[lang][key] != null) live.textContent = COPY[lang][key];
+    const rail = stage.querySelector(".rail");
+    if (rail) rail.scrollLeft = 0;
+  }
+
+  function bindDiscoverLenses() {
+    document.querySelectorAll(".lens").forEach((btn) => {
+      btn.addEventListener("click", () => paintDiscover(btn.dataset.band));
     });
   }
 
@@ -441,6 +478,7 @@
   applyCopy();
   bindLang();
   bindMoods();
+  bindDiscoverLenses();
   if (DISHES[params.get("dish")]) {
     const btn = document.querySelector(`.mood[data-dish="${params.get("dish")}"]`);
     if (btn) btn.click();
