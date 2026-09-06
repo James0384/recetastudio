@@ -28,11 +28,15 @@
       row.dataset.platform = plat;
     });
     const art = STORE_ART[lang] || STORE_ART.en;
+    document.querySelectorAll(".store-badge").forEach((a) => {
+      a.draggable = false;
+    });
     document.querySelectorAll("[data-store]").forEach((img) => {
       const spec = art[img.getAttribute("data-store")];
       if (!spec) return;
       if (img.getAttribute("src") !== spec.src) img.src = spec.src;
       img.alt = spec.alt;
+      img.draggable = false;
     });
   }
 
