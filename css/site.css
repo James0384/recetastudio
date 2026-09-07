@@ -1030,13 +1030,19 @@ body:not(.is-loading) .loader {
 .grocery { background: var(--white); }
 .grocery-media {
   position: absolute;
-  inset: auto 0 0 auto;
-  width: min(46%, 520px);
-  opacity: 0.18;
+  inset: 0;
   pointer-events: none;
   transform: translateZ(0);
+  -webkit-mask-image: linear-gradient(90deg, transparent 28%, #000 72%);
+  mask-image: linear-gradient(90deg, transparent 28%, #000 72%);
 }
-.grocery-media img { width: 100%; height: 100%; object-fit: cover; }
+.grocery-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 78% 48%;
+  opacity: 0.28;
+}
 .glist {
   list-style: none;
   margin: 28px 0 0;
