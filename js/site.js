@@ -63,6 +63,10 @@
       "hero.lede": "Save the page from the cookbook, the link from a friend, and the dish you want tonight. English and Spanish, the way you actually cook.",
       "hero.cta": "Open Receta Studio",
       "hero.note": "On iPhone, Android, and the web.",
+      "seo.title": "Receta Studio — Recipe, meet Receta",
+      "seo.description": "Save the page from the cookbook, the link from a friend, and the dish you want tonight. Receta Studio is a bilingual kitchen for English and Spanish home cooks — now on the App Store, Google Play, and the web.",
+      "seo.og": "Two languages. One kitchen. Now on the App Store, Google Play, and the web.",
+      "seo.ogAlt": "A plate of chimichurri, plantains, and grilled sausage.",
       "hero.scroll": "Scroll to cook",
       "hook.kicker": "Recipe Wizard",
       "hook.title": "What are you making?",
@@ -165,6 +169,10 @@
       "hero.lede": "Guarda la página del libro, el enlace de alguien y el plato que quieres hoy. En inglés y en español, como realmente cocinas.",
       "hero.cta": "Abrir Receta Studio",
       "hero.note": "En iPhone, Android y la web.",
+      "seo.title": "Receta Studio — Recipe, conoce Receta",
+      "seo.description": "Guarda la página del libro, el enlace de alguien y el plato que quieres hoy. Receta Studio es una cocina bilingüe para cocinar en inglés y en español — ahora en el App Store, Google Play y la web.",
+      "seo.og": "Dos idiomas. Una cocina. Ahora en el App Store, Google Play y la web.",
+      "seo.ogAlt": "Un plato de chimichurri, plátanos y chorizo a la parrilla.",
       "hero.scroll": "Baja para cocinar",
       "hook.kicker": "Asistente de recetas",
       "hook.title": "¿Qué vas a preparar?",
@@ -278,9 +286,77 @@
   }
 
   const params = new URLSearchParams(window.location.search);
-  let lang = params.get("lang") === "es" || params.get("lang") === "en"
-    ? params.get("lang")
-    : (isSpanishLocale(navigator.language || navigator.userLanguage) ? "es" : "en");
+  const ORIGIN = "https://recetastudio.com";
+
+  function isEsPath() {
+    const p = (location.pathname || "/").replace(/\/+$/, "") || "/";
+    return p === "/es";
+  }
+
+  function readLang() {
+    if (window.__LANG === "es" || window.__LANG === "en") return window.__LANG;
+    if (isEsPath()) return "es";
+    const q = params.get("lang");
+    if (q === "es" || q === "en") return q;
+    return isSpanishLocale(navigator.language || navigator.userLanguage) ? "es" : "en";
+  }
+
+  let lang = readLang();
+
+  function langPath() {
+    return lang === "es" ? "/es/" : "/";
+  }
+
+  function syncLangUrl() {
+    const nextParams = new URLSearchParams(location.search);
+    nextParams.delete("lang");
+    const q = nextParams.toString();
+    const next = langPath() + (q ? "?" + q : "") + location.hash;
+    const now = location.pathname + location.search + location.hash;
+    if (now !== next) history.replaceState(null, "", next);
+  }
+
+  function setAttr(selector, attr, value) {
+    const el = document.querySelector(selector);
+    if (el) el.setAttribute(attr, value);
+  }
+
+  function applyMeta() {
+    const bag = COPY[lang];
+    if (!bag) return;
+    const url = ORIGIN + langPath();
+    const title = bag["seo.title"];
+    const desc = bag["seo.description"];
+    const og = bag["seo.og"];
+    const alt = bag["seo.ogAlt"];
+    document.documentElement.lang = lang === "es" ? "es-419" : "en-US";
+    if (title) document.title = title;
+    setAttr('meta[name="description"]', "content", desc);
+    setAttr('link[rel="canonical"]', "href", url);
+    setAttr('meta[property="og:title"]', "content", title);
+    setAttr('meta[property="og:description"]', "content", og);
+    setAttr('meta[property="og:url"]', "content", url);
+    setAttr('meta[property="og:locale"]', "content", lang === "es" ? "es_419" : "en_US");
+    setAttr('meta[property="og:locale:alternate"]', "content", lang === "es" ? "en_US" : "es_419");
+    setAttr('meta[property="og:image:alt"]', "content", alt);
+    setAttr('meta[name="twitter:title"]', "content", title);
+    setAttr('meta[name="twitter:description"]', "content", og);
+    setAttr('meta[name="twitter:image:alt"]', "content", alt);
+    const schema = document.getElementById("schema");
+    if (schema) {
+      try {
+        const data = JSON.parse(schema.textContent);
+        const nodes = data["@graph"] || [];
+        nodes.forEach((node) => {
+          if (node["@type"] === "SoftwareApplication") {
+            node.url = url;
+            if (desc) node.description = desc;
+          }
+        });
+        schema.textContent = JSON.stringify(data);
+      } catch (err) { /* leave the static JSON-LD */ }
+    }
+  }
 
   function applyCopy() {
     const bag = COPY[lang];
@@ -305,10 +381,7 @@
         el.textContent = COPY[which]["nav.open"];
       }
     });
-    const title = lang === "es"
-      ? "Receta Studio — Recipe, conoce Receta"
-      : "Receta Studio — Recipe, meet Receta";
-    document.title = title;
+    applyMeta();
     const dish = document.querySelector(".mood.is-on")?.dataset.dish || "tacos";
     paintDish(dish);
     applyStores();
@@ -342,6 +415,13 @@
     if (!toggle) return;
     toggle.addEventListener("click", () => {
       lang = lang === "es" ? "en" : "es";
+      window.__LANG = lang;
+      syncLangUrl();
+      applyCopy();
+    });
+    window.addEventListener("popstate", () => {
+      lang = isEsPath() ? "es" : "en";
+      window.__LANG = lang;
       applyCopy();
     });
   }
@@ -503,6 +583,7 @@
     a.rel = "noopener noreferrer";
   });
 
+  syncLangUrl();
   applyCopy();
   bindLang();
   bindMoods();

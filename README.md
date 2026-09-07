@@ -14,6 +14,7 @@ python3 -m http.server 8765
 Open http://127.0.0.1:8765
 
 Live: [https://recetastudio.com](https://recetastudio.com)  
+Spanish: [https://recetastudio.com/es/](https://recetastudio.com/es/)  
 Repo: [James0384/recetastudio](https://github.com/James0384/recetastudio)  
 Cloudflare Pages project: `recetastudio-www` (`recetastudio-www.pages.dev`)
 
