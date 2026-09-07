@@ -278,7 +278,7 @@ body:not(.is-loading) .loader {
 /* Hero */
 .hero {
   position: relative;
-  min-height: 100svh;
+  min-height: 0;
   color: var(--white);
   overflow: hidden;
   display: grid;
@@ -324,7 +324,7 @@ body:not(.is-loading) .loader {
   z-index: 2;
   width: var(--wrap);
   margin: 0 auto;
-  padding: 28px 0 88px;
+  padding: 24px 0 72px;
   display: grid;
   gap: 36px;
 }
@@ -433,11 +433,10 @@ body:not(.is-loading) .loader {
 }
 
 @media (min-width: 960px) {
-  .hero { align-items: center; }
   .hero-grid {
     grid-template-columns: 1.05fr 0.95fr;
-    align-items: center;
-    padding-bottom: 40px;
+    align-items: start;
+    padding: 28px 0 72px;
   }
   .hero-stage { width: 100%; }
   .device-hero { width: 280px; margin-left: 8%; }
