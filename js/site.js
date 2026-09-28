@@ -1,7 +1,6 @@
 (() => {
   "use strict";
 
-  const APP = "https://app.recetastudio.com";
   const APP_STORE = "https://apps.apple.com/app/receta-studio/id6775508328";
   const PLAY_STORE = "https://play.google.com/store/apps/details?id=com.spinlightproductions.recetastudio";
   const STORE_ART = {
@@ -58,14 +57,14 @@
 
   const COPY = {
     en: {
-      "nav.open": "Open the app",
+      "nav.open": "Get the app",
       "hero.title": "Tonight is already cooking.",
       "hero.lede": "Save the page from the cookbook, the link from a friend, and the dish you want tonight. English and Spanish, the way you actually cook.",
       "hero.cta": "Open Receta Studio",
-      "hero.note": "On iPhone, Android, and the web.",
+      "hero.note": "On iPhone and Android.",
       "seo.title": "Receta Studio — Recipe, meet Receta",
-      "seo.description": "Save the page from the cookbook, the link from a friend, and the dish you want tonight. Receta Studio is a bilingual kitchen for English and Spanish home cooks — now on the App Store, Google Play, and the web.",
-      "seo.og": "Two languages. One kitchen. Now on the App Store, Google Play, and the web.",
+      "seo.description": "Save the page from the cookbook, the link from a friend, and the dish you want tonight. Receta Studio is a bilingual kitchen for English and Spanish home cooks — now on the App Store and Google Play.",
+      "seo.og": "Two languages. One kitchen. Now on the App Store and Google Play.",
       "seo.ogAlt": "A plate of chimichurri, plantains, and grilled sausage.",
       "hero.scroll": "Scroll to cook",
       "hook.kicker": "Recipe Wizard",
@@ -152,10 +151,10 @@
       "price.feat.lang.body": "The same recipe, in the language you want tonight.",
       "price.feat.nutrition.name": "Nutrition",
       "price.feat.nutrition.body": "On every recipe you cook.",
-      "price.note": "On iPhone, Android, and the web.",
-      "price.cta": "Open Receta Studio",
+      "price.note": "On iPhone and Android.",
+      "price.cta": "Get the app",
       "cta.title": "The kitchen’s\u00A0open.",
-      "cta.body": "On iPhone, Android, and the\u00A0web.",
+      "cta.body": "On iPhone and Android.",
       "cta.button": "Open Receta Studio",
       "foot.apple": "App Store",
       "foot.play": "Google Play",
@@ -164,14 +163,14 @@
       "foot.legal": "Apple, the Apple logo, App Store, and iPhone are trademarks of Apple Inc., registered in the U.S. and other countries. Google Play and the Google Play logo are trademarks of Google LLC.",
     },
     es: {
-      "nav.open": "Abrir la app",
+      "nav.open": "Consigue la app",
       "hero.title": "Esta noche ya se está cocinando.",
       "hero.lede": "Guarda la página del libro, el enlace de alguien y el plato que quieres hoy. En inglés y en español, como realmente cocinas.",
       "hero.cta": "Abrir Receta Studio",
-      "hero.note": "En iPhone, Android y la web.",
+      "hero.note": "En iPhone y Android.",
       "seo.title": "Receta Studio — Recipe, conoce Receta",
-      "seo.description": "Guarda la página del libro, el enlace de alguien y el plato que quieres hoy. Receta Studio es una cocina bilingüe para cocinar en inglés y en español — ahora en el App Store, Google Play y la web.",
-      "seo.og": "Dos idiomas. Una cocina. Ahora en el App Store, Google Play y la web.",
+      "seo.description": "Guarda la página del libro, el enlace de alguien y el plato que quieres hoy. Receta Studio es una cocina bilingüe para cocinar en inglés y en español — ahora en el App Store y en Google Play.",
+      "seo.og": "Dos idiomas. Una cocina. Ahora en el App Store y en Google Play.",
       "seo.ogAlt": "Un plato de chimichurri, plátanos y chorizo a la parrilla.",
       "hero.scroll": "Baja para cocinar",
       "hook.kicker": "Asistente de recetas",
@@ -258,10 +257,10 @@
       "price.feat.lang.body": "La misma receta, en el idioma que quieres esta noche.",
       "price.feat.nutrition.name": "Nutrición",
       "price.feat.nutrition.body": "En cada receta que cocinas.",
-      "price.note": "En iPhone, Android y la web.",
-      "price.cta": "Abrir Receta Studio",
+      "price.note": "En iPhone y Android.",
+      "price.cta": "Consigue la app",
       "cta.title": "La cocina está\u00A0abierta.",
-      "cta.body": "En iPhone, Android y la\u00A0web.",
+      "cta.body": "En iPhone y Android.",
       "cta.button": "Abrir Receta Studio",
       "foot.apple": "App Store",
       "foot.play": "Google Play",
@@ -578,7 +577,7 @@
   }
 
   document.querySelectorAll(
-    'a[href="' + APP + '"], a[href="' + APP_STORE + '"], a[href="' + PLAY_STORE + '"]'
+    'a[href="' + APP_STORE + '"], a[href="' + PLAY_STORE + '"]'
   ).forEach((a) => {
     a.rel = "noopener noreferrer";
   });

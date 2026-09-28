@@ -1,6 +1,6 @@
 # Receta Studio — public site
 
-Static marketing site for [recetastudio.com](https://recetastudio.com). The product app stays at [app.recetastudio.com](https://app.recetastudio.com).
+Static marketing site for [recetastudio.com](https://recetastudio.com). The product is the iOS and Android apps. `app.recetastudio.com` is a private host, not a public way into the kitchen.
 
 This folder is self-contained. No build step.
 
@@ -18,11 +18,11 @@ Spanish: [https://recetastudio.com/es/](https://recetastudio.com/es/)
 Repo: [James0384/recetastudio](https://github.com/James0384/recetastudio)  
 Cloudflare Pages project: `recetastudio-www` (`recetastudio-www.pages.dev`)
 
-The app stays on a separate Pages project (`recipe-studio` → `app.recetastudio.com`). Do not point the apex at that project.
+The phone-app frontend stays on a separate Pages project (`recipe-studio` → `app.recetastudio.com`), behind Cloudflare Access. Do not point the apex at that project. Do not link this site to `app.recetastudio.com`.
 
 ## Publish
 
-This folder’s **contents** (not the `landing` directory itself) live in `James0384/recetastudio` on `main`. A push to `main` deploys Cloudflare Pages. Keep `app.recetastudio.com` on `recipe-studio.pages.dev`.
+This folder’s **contents** (not the `landing` directory itself) live in `James0384/recetastudio` on `main`. A push to `main` deploys Cloudflare Pages. Leave `app.recetastudio.com` on the `recipe-studio` project.
 
 ## What’s in here
 
