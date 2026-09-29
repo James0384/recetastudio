@@ -3,3 +3,9 @@
 
 /js/site.js
   Cache-Control: public, max-age=0, must-revalidate
+
+/get
+  Cache-Control: no-store
+
+/get/
+  Cache-Control: no-store

@@ -32,3 +32,7 @@ This folder’s **contents** (not the `landing` directory itself) live in `James
 - EN / es-419 toggle (follows the browser locale on first load)
 
 Copy rule: no “AI” / “IA” in user-facing text. Feature names match the app (Wizard / Creador, Discover / Descubrir, Cook Mode / Modo cocina).
+
+## /get
+
+`/get` sends iPhone, iPad, and iPod to the App Store and Android to Google Play. Desktop and unknown user agents get the two store buttons.
